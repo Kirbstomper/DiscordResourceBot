@@ -1,4 +1,4 @@
-# PhantasyStarResourceDiscordBot
+# DiscordResourceBot
 A Discord Bot written in golang designed to easily give users a list of resources they request
 
 Because this is a template repo, you can simply click the "Use this template" button, edit the YAML file and add it to your own server. Very quick and easy.
