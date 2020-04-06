@@ -99,12 +99,12 @@ func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 		return
 	}
 	message := strings.Split(m.Content, " ")
-	// If the message is "ping" reply with "Pong!"
+	// Provides users with a guide, if availible
 	if message[0] == "!guides" {
 		s.ChannelMessageSend(m.ChannelID, getGuides(message[1]))
 	}
 
-	// Provides users of the bot with
+	// Provides users of the bot with the guides supplied in the yml file
 	if m.Content == "!help" {
 		s.ChannelMessageSend(m.ChannelID, "`\n Usage is !guides \"GuideName\" \n Availible Guides:"+strings.Join(keys, ", ")+"`")
 	}
