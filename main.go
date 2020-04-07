@@ -30,6 +30,7 @@ func init() {
 
 type ResourceList struct {
 	Resources map[string]guides `yaml:"Resources"`
+	Tokenkey  string            `yaml:"DiscordBotToken"`
 }
 type guides []Resource
 type Resource struct {
@@ -57,6 +58,11 @@ func main() {
 	fmt.Println(a.Resources)
 
 	// Create a new Discord session using the provided bot token.
+
+	if a.Tokenkey != "" {
+		Token = a.Tokenkey
+	}
+
 	dg, err := discordgo.New("Bot " + Token)
 	if err != nil {
 		fmt.Println("error creating Discord session,", err)
